@@ -1,14 +1,62 @@
-def q1(cidades):
-    return []
+def q1(idades):
+    lista_cidades = []
+    for chave in idades:
+        if idades[chave] > 100:
+            lista_cidades.append(chave)
+    return lista_cidades
 
 def q2(lista1, lista2):
-    return []
+    lista_soma = lista1 + lista2
+    soma = 0
+    lista_positivos = []
+
+    for num in lista_soma:
+    
+        if num > 0:
+            soma += num
+            lista_positivos.append(num)
+    lista_ordenada = sorted(lista_positivos)
+    return soma, lista_ordenada
+
 
 def q3(valores):
-    return [],[]
+    lista = []
 
-def q4(valores):
-    return []
+    while True:
+        valor = int(input("Digite um número:"))
+        if valor == 0:
+            break
+        lista.append(valor)
+    return lista
+
+def ler_valores(lista):
+    lista_pares = []
+    lista_impares = []
+    for num in lista:
+        if num%2 == 0:
+            lista_pares.append(num)
+        else:
+            lista_impares.append(num)
+    return lista_pares, lista_impares
+
+
+def ler_03_alturas(valores):
+    alturas = []
+    contador = 0
+    while True:
+        contador += 1
+        altura = float(input("Digite sua altura:"))
+        alturas.append(f'{altura:.2f}')
+        if contador == 3:
+            break
+    return alturas
+
+def organizar_alturas(alturas):
+    ordem_joaquina = []
+    alturas[0], alturas[1], alturas[2] = alturas[1], alturas[2], alturas[0]
+    for i in alturas:
+        ordem_joaquina.append(i)
+    return ordem_joaquina
 
 def main():
     # Teste as questões que você desenvolveu manualmente:
